@@ -10,7 +10,7 @@ A superpower.
         - citekey (e.g., pandoc format)
         - author last names
         - author last names plus no-author/year-only citekey
-            - set max number of names to show before adding et al.
+            - set max number of names to show before adding "et al.""
             - set option to do "<first author>  et al. (<year>)"
         - full formatted reference (e.g., APA style; could use .csl files here)
     - display user's notes (if there is a notes field in the BibTeX entry)
