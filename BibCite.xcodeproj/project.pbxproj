@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		867A77D01D1BB789003A2AED /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867A77CF1D1BB789003A2AED /* main.swift */; };
+		B7FD79251D1ED5C8008D0E49 /* BibCiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD79241D1ED5C8008D0E49 /* BibCiteTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +26,20 @@
 /* Begin PBXFileReference section */
 		867A77CC1D1BB789003A2AED /* BibCite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BibCite; sourceTree = BUILT_PRODUCTS_DIR; };
 		867A77CF1D1BB789003A2AED /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		B7FD79221D1ED5C8008D0E49 /* BibCiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BibCiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7FD79241D1ED5C8008D0E49 /* BibCiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibCiteTests.swift; sourceTree = "<group>"; };
+		B7FD79261D1ED5C8008D0E49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		867A77C91D1BB789003A2AED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7FD791F1D1ED5C8008D0E49 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				867A77CE1D1BB789003A2AED /* BibCite */,
+				B7FD79231D1ED5C8008D0E49 /* BibCiteTests */,
 				867A77CD1D1BB789003A2AED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				867A77CC1D1BB789003A2AED /* BibCite */,
+				B7FD79221D1ED5C8008D0E49 /* BibCiteTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +75,15 @@
 			path = BibCite;
 			sourceTree = "<group>";
 		};
+		B7FD79231D1ED5C8008D0E49 /* BibCiteTests */ = {
+			isa = PBXGroup;
+			children = (
+				B7FD79241D1ED5C8008D0E49 /* BibCiteTests.swift */,
+				B7FD79261D1ED5C8008D0E49 /* Info.plist */,
+			);
+			path = BibCiteTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -72,7 +94,6 @@
 				867A77C81D1BB789003A2AED /* Sources */,
 				867A77C91D1BB789003A2AED /* Frameworks */,
 				867A77CA1D1BB789003A2AED /* CopyFiles */,
-				867A77D61D1BB88B003A2AED /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -82,6 +103,23 @@
 			productName = BibCite;
 			productReference = 867A77CC1D1BB789003A2AED /* BibCite */;
 			productType = "com.apple.product-type.tool";
+		};
+		B7FD79211D1ED5C8008D0E49 /* BibCiteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7FD79271D1ED5C8008D0E49 /* Build configuration list for PBXNativeTarget "BibCiteTests" */;
+			buildPhases = (
+				B7FD791E1D1ED5C8008D0E49 /* Sources */,
+				B7FD791F1D1ED5C8008D0E49 /* Frameworks */,
+				B7FD79201D1ED5C8008D0E49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BibCiteTests;
+			productName = BibCiteTests;
+			productReference = B7FD79221D1ED5C8008D0E49 /* BibCiteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -99,6 +137,12 @@
 						DevelopmentTeamName = "Gabe Nespoli (Personal Team)";
 						ProvisioningStyle = Automatic;
 					};
+					B7FD79211D1ED5C8008D0E49 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = V2363335BY;
+						DevelopmentTeamName = "Ten Kettles Inc.";
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 867A77C71D1BB789003A2AED /* Build configuration list for PBXProject "BibCite" */;
@@ -114,25 +158,20 @@
 			projectRoot = "";
 			targets = (
 				867A77CB1D1BB789003A2AED /* BibCite */,
+				B7FD79211D1ED5C8008D0E49 /* BibCiteTests */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		867A77D61D1BB88B003A2AED /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		B7FD79201D1ED5C8008D0E49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
 		};
-/* End PBXShellScriptBuildPhase section */
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		867A77C81D1BB789003A2AED /* Sources */ = {
@@ -140,6 +179,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				867A77D01D1BB789003A2AED /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7FD791E1D1ED5C8008D0E49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7FD79251D1ED5C8008D0E49 /* BibCiteTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +291,32 @@
 			};
 			name = Release;
 		};
+		B7FD79281D1ED5C8008D0E49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BibCiteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alltheducks.BibCiteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B7FD79291D1ED5C8008D0E49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BibCiteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alltheducks.BibCiteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -261,6 +334,15 @@
 			buildConfigurations = (
 				867A77D41D1BB789003A2AED /* Debug */,
 				867A77D51D1BB789003A2AED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7FD79271D1ED5C8008D0E49 /* Build configuration list for PBXNativeTarget "BibCiteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7FD79281D1ED5C8008D0E49 /* Debug */,
+				B7FD79291D1ED5C8008D0E49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
