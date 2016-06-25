@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		867A77D01D1BB789003A2AED /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867A77CF1D1BB789003A2AED /* main.swift */; };
 		B7FD79251D1ED5C8008D0E49 /* BibCiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD79241D1ED5C8008D0E49 /* BibCiteTests.swift */; };
+		B7FD792D1D1ED7EA008D0E49 /* BibFile-Full.bib in Resources */ = {isa = PBXBuildFile; fileRef = B7FD792A1D1ED7EA008D0E49 /* BibFile-Full.bib */; };
+		B7FD792E1D1ED7EA008D0E49 /* BibFile-Single.bib in Resources */ = {isa = PBXBuildFile; fileRef = B7FD792B1D1ED7EA008D0E49 /* BibFile-Single.bib */; };
+		B7FD792F1D1ED7EA008D0E49 /* BibFile-Small.bib in Resources */ = {isa = PBXBuildFile; fileRef = B7FD792C1D1ED7EA008D0E49 /* BibFile-Small.bib */; };
+		B7FD79321D1ED887008D0E49 /* String-Single.bib in Resources */ = {isa = PBXBuildFile; fileRef = B7FD79311D1ED887008D0E49 /* String-Single.bib */; };
+		B7FD79341D1ED8A3008D0E49 /* Citation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD79331D1ED8A3008D0E49 /* Citation.swift */; };
+		B7FD79361D1ED974008D0E49 /* CitationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD79351D1ED974008D0E49 /* CitationTests.swift */; };
+		B7FD79381D1EE1C6008D0E49 /* Citation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD79331D1ED8A3008D0E49 /* Citation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +36,12 @@
 		B7FD79221D1ED5C8008D0E49 /* BibCiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BibCiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7FD79241D1ED5C8008D0E49 /* BibCiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibCiteTests.swift; sourceTree = "<group>"; };
 		B7FD79261D1ED5C8008D0E49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7FD792A1D1ED7EA008D0E49 /* BibFile-Full.bib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BibFile-Full.bib"; sourceTree = "<group>"; };
+		B7FD792B1D1ED7EA008D0E49 /* BibFile-Single.bib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BibFile-Single.bib"; sourceTree = "<group>"; };
+		B7FD792C1D1ED7EA008D0E49 /* BibFile-Small.bib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BibFile-Small.bib"; sourceTree = "<group>"; };
+		B7FD79311D1ED887008D0E49 /* String-Single.bib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "String-Single.bib"; sourceTree = "<group>"; };
+		B7FD79331D1ED8A3008D0E49 /* Citation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Citation.swift; sourceTree = "<group>"; };
+		B7FD79351D1ED974008D0E49 /* CitationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				867A77CF1D1BB789003A2AED /* main.swift */,
+				B7FD79331D1ED8A3008D0E49 /* Citation.swift */,
 			);
 			path = BibCite;
 			sourceTree = "<group>";
@@ -79,9 +93,22 @@
 			isa = PBXGroup;
 			children = (
 				B7FD79241D1ED5C8008D0E49 /* BibCiteTests.swift */,
+				B7FD79351D1ED974008D0E49 /* CitationTests.swift */,
 				B7FD79261D1ED5C8008D0E49 /* Info.plist */,
+				B7FD79301D1ED7F1008D0E49 /* Sample Data */,
 			);
 			path = BibCiteTests;
+			sourceTree = "<group>";
+		};
+		B7FD79301D1ED7F1008D0E49 /* Sample Data */ = {
+			isa = PBXGroup;
+			children = (
+				B7FD792A1D1ED7EA008D0E49 /* BibFile-Full.bib */,
+				B7FD792B1D1ED7EA008D0E49 /* BibFile-Single.bib */,
+				B7FD792C1D1ED7EA008D0E49 /* BibFile-Small.bib */,
+				B7FD79311D1ED887008D0E49 /* String-Single.bib */,
+			);
+			name = "Sample Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +195,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7FD792D1D1ED7EA008D0E49 /* BibFile-Full.bib in Resources */,
+				B7FD792E1D1ED7EA008D0E49 /* BibFile-Single.bib in Resources */,
+				B7FD79321D1ED887008D0E49 /* String-Single.bib in Resources */,
+				B7FD792F1D1ED7EA008D0E49 /* BibFile-Small.bib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7FD79341D1ED8A3008D0E49 /* Citation.swift in Sources */,
 				867A77D01D1BB789003A2AED /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,6 +218,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7FD79381D1EE1C6008D0E49 /* Citation.swift in Sources */,
+				B7FD79361D1ED974008D0E49 /* CitationTests.swift in Sources */,
 				B7FD79251D1ED5C8008D0E49 /* BibCiteTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +329,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = BibCiteTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alltheducks.BibCiteTests;
@@ -308,6 +343,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = BibCiteTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alltheducks.BibCiteTests;
