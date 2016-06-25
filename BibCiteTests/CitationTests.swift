@@ -21,7 +21,7 @@ class CitationTests: XCTestCase {
         let citation = Citation.make(string: testString)
         
         // then
-        let expected = Citation(citeKey:"Bidelman2009", authors: ["aoeu"])
+        let expected = Citation(citeKey:"Bidelman2009", authors: ["Bidelman","Gavin M and Krishnan","Ananthanarayan"])
         XCTAssertEqual(citation.citeKey, expected.citeKey)
         XCTAssertEqual(citation.authors, expected.authors)
     }
