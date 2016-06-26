@@ -20,31 +20,37 @@ A superpower.
 ## Overview of model
 
 ### Citation
-- Citation is a simple struct comprising all the fields of a citation—citekey, authors, etc.—with its association actions (e.g., copy to clipboard)
-
-### FileLoader
-- FileLoader returns an array of Citation structs for a particular BibTeX file path. It is known only to the Library.
-- BibTeX file path --> *FileLoader* --> Citation object array
+- `Citation` comprises all the fields of a citation—citekey, authors, etc.—and offers various `Citation`-related utilities such as copy-to-clipboard and initialize-from-string.
+- Usage: Can be used in any class.
 
 ### Library
-- A record of all known Citation objects and associated tasks required by the ViewModel
+- A record of all known `Citation` objects and tools for their setup and search.
+- Usage: Used as an interface to the model (i.e., responds to search queries, setup commands, etc.) so that rest of app needn't worry about `FileLoader` and `Searcher`.
+
+### FileLoader
+- `FileLoader` returns an array of `Citation` objects for a particular BibTeX file path. 
+- BibTeX file path --> `FileLoader` --> Citation object array.
+- Usage: It is known only to the `Library`.
 
 ### Searcher
-- The Searcher class returns an ordered list of all known Citation objects that match a particular search term. It is known only to the library.
-- Search term --> *Searcher* --> Array of matching Citation objects
+- The `Searcher` class returns an ordered list of all known `Citation` objects that match a particular search term. 
+- Search term --> `Searcher` --> Array of matching `Citation` objects
+- Usage: It is known only to the `Library`.
 
 ## Model unit tests
 Test that incoming queries yield expected results, incoming commands yield expected changes to exposed object state (i.e., not private stuff), and that outgoing commands are received by target objects.
 
 ### Citation
 - Test that it copies to clipboard
+- Test that it is initialized from string
 
 ### FileLoader
-- Test that it loads known Citation object array from sample file
+- Test that it loads expected number of `Citation` objects from sample file
+- Test that it calls `Citation` initializer expected number of times
 
 ### Library
-- Test that a search query in turn queries the Searcher class
-- Test that a setup query in turn queries the FileLoader class
+- Test that a search query returns expected mock data from the `Searcher` class
+- Test that a setup query returns expected mock data from the `FileLoader` class
 
 ### Searcher
 - Test that it returns nothing for empty search term
@@ -52,7 +58,7 @@ Test that incoming queries yield expected results, incoming commands yield expec
 - Test that it returns known result for multiple word search term and sample data
 
 ## Model integration tests
-- Test that calling setup() on the Library function yields expected Citation array
-- Test that calling search(searchTerm:) on the Library function yields empty results for empty query
-- Test that calling search(searchTerm:) on the Library function yields expected results for single word query
-- Test that calling search(searchTerm:) on the Library function yields expected results for multi-word query
+- Test that calling `setup()` on `Library` with mock data yields expected Citation array
+- Test that calling `search(searchTerm:)` on the `Library` with mock data yields empty results for empty query
+- Test that calling `search(searchTerm:)` on the `Library` with mock data yields expected results for single word query
+- Test that calling `search(searchTerm:)` on the `Library` with mock data yields expected results for multi-word query

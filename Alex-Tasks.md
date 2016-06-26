@@ -1,4 +1,5 @@
 # Alex's tasks
 
-1. Update architecture plan in BibCite-Plan (add object relationships section)
-2. Write FileLoader (TDD)?
+[x] Update architecture plan in BibCite-Plan (add object relationships section)
+[ ] Write clipboard test for `Citation`
+[ ] Write FileLoader (TDD)?
