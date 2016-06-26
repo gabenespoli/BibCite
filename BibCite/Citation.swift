@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import AppKit
 
 struct Citation{
     
-    let citeKey: String
+    let key: String
     let authors: [String]
     
     /**
@@ -20,9 +21,16 @@ struct Citation{
      */
     static func make(string: String) -> Citation{
         
-        let key = string
+        let citeKey = string
         let authorList = ["Fraggle","Doozer","Gorg"]
         
-        return Citation(citeKey: key, authors: authorList)
+        return Citation(key: citeKey, authors: authorList)
+    }
+    
+    /**
+     Copy Citation's key to the clipboard
+     */
+    func copyKey(){
+        
     }
 }
