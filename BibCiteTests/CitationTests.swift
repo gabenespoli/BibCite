@@ -11,7 +11,7 @@ import XCTest
 
 class CitationTests: XCTestCase {
 
-    func testThatItIsInitializedFromString(){
+    func testThatItsKeyIsInitializedFromString(){
         // given
         let bundle = Bundle(for: self.dynamicType)
         let path = bundle.pathForResource("String-Single", ofType: "bib")!
@@ -21,10 +21,22 @@ class CitationTests: XCTestCase {
         let citation = Citation.make(string: testString)
         
         // then
-        let expected = Citation(key:"Bidelman2009",
-                                authors: ["Bidelman","Gavin M and Krishnan","Ananthanarayan"])
-        XCTAssertEqual(citation.key, expected.key)
-        XCTAssertEqual(citation.authors, expected.authors)
+        let expected = "Bidelman2009"
+        XCTAssertEqual(citation.key, expected)
+    }
+    
+    func testThatItsAuthorsAreInitializedFromString(){
+        // given
+        let bundle = Bundle(for: self.dynamicType)
+        let path = bundle.pathForResource("String-Single", ofType: "bib")!
+        let testString = try! String(contentsOfFile: path)
+        
+        // when
+        let citation = Citation.make(string: testString)
+        
+        // then
+        let expected = ["Bidelman","Gavin M and Krishnan","Ananthanarayan"]
+        XCTAssertEqual(citation.authors, expected)
     }
     
     func testThatItIsCopiedToClipboard(){
