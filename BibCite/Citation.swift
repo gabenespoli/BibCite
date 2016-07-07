@@ -21,8 +21,8 @@ struct Citation{
      */
     static func make(string: String) -> Citation{
         
-        let citeKey = string
-        let authorList = ["Fraggle","Doozer","Gorg"]
+        let citeKey = "Bidelman2009"
+        let authorList = ["Bidelman","Gavin M and Krishnan","Ananthanarayan"]
         
         return Citation(key: citeKey, authors: authorList)
     }
