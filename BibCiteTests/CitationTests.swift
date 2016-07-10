@@ -14,7 +14,7 @@ class CitationTests: XCTestCase {
     func testThatItsKeyIsInitializedFromString(){
         // given
         let bundle = Bundle(for: self.dynamicType)
-        let path = bundle.pathForResource("String-Single", ofType: "bib")!
+        let path = bundle.pathForResource("String-Single-1", ofType: "bib")!
         let testString = try! String(contentsOfFile: path)
         
         // when 
@@ -25,10 +25,24 @@ class CitationTests: XCTestCase {
         XCTAssertEqual(citation.key, expected)
     }
     
+    func testThatItsKeyIsInitializedFromDifferentString(){
+        // given
+        let bundle = Bundle(for: self.dynamicType)
+        let path = bundle.pathForResource("String-Single-2", ofType: "bib")!
+        let testString = try! String(contentsOfFile: path)
+        
+        // when
+        let citation = Citation.make(string: testString)
+        
+        // then
+        let expected = "Caramazza1988"
+        XCTAssertEqual(citation.key, expected)
+    }
+    
     func testThatItsAuthorsAreInitializedFromString(){
         // given
         let bundle = Bundle(for: self.dynamicType)
-        let path = bundle.pathForResource("String-Single", ofType: "bib")!
+        let path = bundle.pathForResource("String-Single-1", ofType: "bib")!
         let testString = try! String(contentsOfFile: path)
         
         // when
@@ -36,6 +50,20 @@ class CitationTests: XCTestCase {
         
         // then
         let expected = ["Bidelman","Gavin M and Krishnan","Ananthanarayan"]
+        XCTAssertEqual(citation.authors, expected)
+    }
+    
+    func testThatItsAuthorsAreInitializedFromDifferentString(){
+        // given
+        let bundle = Bundle(for: self.dynamicType)
+        let path = bundle.pathForResource("String-Single-2", ofType: "bib")!
+        let testString = try! String(contentsOfFile: path)
+        
+        // when
+        let citation = Citation.make(string: testString)
+        
+        // then
+        let expected = ["Caramazza","Alfonso and McCloskey"," Michael"]
         XCTAssertEqual(citation.authors, expected)
     }
     
