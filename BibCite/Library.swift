@@ -11,17 +11,15 @@ import Foundation
 struct Library{
     
     let citations:[Citation]
+    private let allCitationFilename = "BibFile-Full"
     
     /**
      Loads all Citation objects from file
      */
     init(){
-        //    guard let bibFilePath = Bundle.pathForResource("BibFile-Full",
-        //                                             ofType: "bib",
-        //                                             inDirectory: "Resources") else{
-        //        fatalError("Could not find bib file")
-        //    } still figuring out how to load from file using a command line tool
-        let url = NSURL() // fake
+        guard let url = Bundle.main.urlForResource(allCitationFilename, withExtension: "bib") else{
+            fatalError("Could not find citation reference file")
+        }
         let loader = CitationLoader()
         self.citations = loader.citations(url: url)
     }
