@@ -25,37 +25,30 @@ A superpower.
 
 ### Library
 - A record of all known `Citation` objects and tools for their setup and search.
-- Usage: Used as an interface to the model (i.e., responds to search queries, setup commands, etc.) so that rest of app needn't worry about `FileLoader` and `Searcher`.
+- Usage: Used as an interface to the model (i.e., responds to search queries, setup commands, etc.) so that rest of app needn't worry about `CitationLoader`.
 
-### FileLoader
-- `FileLoader` returns an array of `Citation` objects for a particular BibTeX file path. 
-- BibTeX file path --> `FileLoader` --> Citation object array.
-- Usage: It is known only to the `Library`.
-
-### Searcher
-- The `Searcher` class returns an ordered list of all known `Citation` objects that match a particular search term. 
-- Search term --> `Searcher` --> Array of matching `Citation` objects
-- Usage: It is known only to the `Library`.
+### CitationLoader
+- `CitationLoader` returns an array of `Citation` objects for a particular BibTeX file path. 
+- BibTeX file path --> `CitationLoader` --> Citation object array.
+- Usage: It is used only by the `Library`.
 
 ## Model unit tests
 Test that incoming queries yield expected results, incoming commands yield expected changes to exposed object state (i.e., not private stuff), and that outgoing commands are received by target objects.
 
 ### Citation
 - Test that it copies to clipboard
-- Test that it is initialized from string
 
-### FileLoader
+### CitationLoader
 - Test that it loads expected number of `Citation` objects from sample file
-- Test that it calls `Citation` initializer expected number of times
+- Test that it loads expected string array of citations from sample file
+- Test that it initializes a `Citation` instance from a string
 
 ### Library
-- Test that a search query returns expected mock data from the `Searcher` class
-- Test that a setup query returns expected mock data from the `FileLoader` class
-
-### Searcher
+- Test that initialization loads expected expected mock data from the `CitationLoader` class
 - Test that it returns nothing for empty search term
 - Test that it returns known result for single word search term and sample data
 - Test that it returns known result for multiple word search term and sample data
+
 
 ## Model integration tests
 - Test that calling `setup()` on `Library` with mock data yields expected Citation array
