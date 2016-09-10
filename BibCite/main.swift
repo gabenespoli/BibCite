@@ -8,12 +8,12 @@
 
 import Foundation
 
-if Process.argc == 2{
-    let library = Library()
-    let query = Process.arguments[1]
-    let results = library.search(query:query)
-    results.forEach{print($0)} // Replace with $0.summary
-} else {
-    print("ERROR: Single argument expected. You entered \(Process.argc)")
-}
-
+//if Process.argc == 2{
+//    let library = Library()
+//    let query = Process.arguments[1]
+//    let results = library.search(query:query)
+//    results.forEach{print($0)} // Replace with $0.summary
+//} else {
+//    print("ERROR: Single argument expected. You entered \(Process.argc)")
+//}
+//

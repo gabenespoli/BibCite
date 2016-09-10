@@ -17,7 +17,7 @@ struct Library{
      Loads all Citation objects from file
      */
     init(){
-        guard let url = Bundle.main.urlForResource(allCitationFilename, withExtension: "bib") else{
+        guard let url = Bundle.main.url(forResource:allCitationFilename, withExtension: "bib") else{
             fatalError("Could not find citation reference file")
         }
         let loader = CitationLoader()

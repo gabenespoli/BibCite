@@ -16,7 +16,7 @@ class CitationLoader{
      
      - Parameter url: URL of BibTeX file
      */
-    func citations(url: NSURL) -> [Citation]{
+    func citations(url: URL) -> [Citation]{
         return [makeCitation(string: ""),
                 makeCitation(string: ""),
                 makeCitation(string: "")] // fake
@@ -31,7 +31,14 @@ class CitationLoader{
      
      - Parameter url: URL of BibTeX file
      */
-    func citationStrings(url: NSURL) -> [String]{
+    func citationStrings(url: URL) -> [String]{
+        
+        // Load string from file
+        
+        // Parse, extracting citations
+        
+        //NT write test for this
+        
         return [String]() // fake
     }
     
