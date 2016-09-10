@@ -37,11 +37,11 @@ Test that incoming queries yield expected results, incoming commands yield expec
 
 ### Citation
 - Test that it copies to clipboard
+- Test that it initializes a `Citation` instance from a string
 
 ### CitationLoader
 - Test that it loads expected number of `Citation` objects from sample file
 - Test that it loads expected string array of citations from sample file
-- Test that it initializes a `Citation` instance from a string
 
 ### Library
 - Test that initialization loads expected expected mock data from the `CitationLoader` class
