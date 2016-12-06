@@ -8,8 +8,9 @@
 
 import Foundation
 
+
+/// `CitationLoader` returns an array of `Citation` objects for a particular BibTeX file path.
 class CitationLoader{
-    
     
     /**
      Returns an array of Citation objects for a particular BibTeX file

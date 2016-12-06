@@ -8,10 +8,13 @@
 
 import Foundation
 
+
+/// The Library struct keeps a record of all known Citation objects and tools for their setup and search
 struct Library{
     
     let citations:[Citation]
     private let allCitationFilename = "BibFile-Full"
+    
     
     /**
      Loads all Citation objects from file

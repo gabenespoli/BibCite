@@ -9,6 +9,8 @@
 import Foundation
 import AppKit
 
+
+/// A Citation object comprises all the fields of a citation—citekey, authors, etc.—and offers various Citation-related utilities such as copy-to-clipboard and initialize-from-string
 struct Citation{
     
     let key: String

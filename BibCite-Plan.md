@@ -1,5 +1,5 @@
 # BibCite
-A superpower.
+A superpowered Spotlight for BibTeX citations
 
 ## Usage and Functionality
 - user must define the location of a BibTeX file
