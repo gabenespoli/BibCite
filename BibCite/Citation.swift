@@ -26,7 +26,7 @@ class Citation:CustomStringConvertible{
     var doi: String?
     
     var description: String{
-        return "[\(key)] \(author). \(year).\n\(title). \(journal)."
+        return "[\(key)] \(author). \(year).\n\(title). \(journal ?? "")."
     }
     
     
@@ -74,37 +74,7 @@ class Citation:CustomStringConvertible{
         
         self.init(key: key, author: author, year: year, title: title, journal: citation["journal"], file: citation["file"], url: citation["url"], volume: citation["volume"], number: citation["number"], pages: citation["pages"], doi: citation["doi"])
 
-        
-        /**
 
-        // split by newlines
-        let fields = string.characters.split(separator: "\n").map{String($0)}
-        
-        var fieldsDict: [String:String] = [:] // initalize dictionary
-        
-        // add cite key to dictionary
-        fieldsDict["citeKey"] = fields[0].trimmingCharacters(in: .whitespacesAndNewlines)
-        fieldsDict["citeKey"] = fieldsDict["citeKey"]?.trimmingCharacters(in: ["}","{",","])
-        
-        // add rest of info to dictionary
-        // start at 1 because citekey is done above because it doesn't have an "=" to split by
-        for i in 1...fields.count-1 {
-            var fieldsTrimmed = fields[i].trimmingCharacters(in: .whitespacesAndNewlines)
-            
-            var temp = fieldsTrimmed.characters.split(separator: "=").map{String($0)}
-            
-            for j in 0...temp.count-1 {
-                temp[j] = temp[j].trimmingCharacters(in: .whitespacesAndNewlines)
-                temp[j] = temp[j].trimmingCharacters(in: ["}","{",","])
-                temp[j] = temp[j].trimmingCharacters(in: .whitespacesAndNewlines)
-            }
-            
-            fieldsDict["\(temp[0])"] = temp[1]
-        }
-        
-        let author = fieldsDict["author"]!.components(separatedBy: " and ")
-        self = Citation(key: fieldsDict["citeKey"]!, author: author)
-        */
     }
     
     /**
