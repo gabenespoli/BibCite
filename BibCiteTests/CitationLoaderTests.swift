@@ -11,7 +11,20 @@ import XCTest
 
 class CitationLoaderTests: XCTestCase {
 
-    func testThatItLoadsCorrectNumberOfCitations() {
+    func testThatItLoadsOneCitation() {
+        // given
+        let url = Bundle(for: type(of: self)).url(forResource: "BibFile-Single", withExtension: "bib")!
+        
+        // when
+        let loader = CitationLoader()
+        let citations = loader.load(fromUrl: url)
+        
+        // then
+        let expected = 1
+        XCTAssertEqual(citations.count,expected)
+    }
+    
+    func testThatItLoadsThreeCitations() {
         // given
         let url = Bundle(for: type(of: self)).url(forResource: "BibFile-Small", withExtension: "bib")!
         
