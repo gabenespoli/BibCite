@@ -8,17 +8,18 @@
 
 import Foundation
 
-if CommandLine.argc == 2{
-    
-    let query = CommandLine.arguments[1]
-    
-    let library = Library()
-    let results = library.search(query:query)
-    
-    results.forEach{print($0)}
-    
-} else {
-    
-    print("ERROR: Single argument expected. You entered \(CommandLine.argc)")
+func main(){
+    if CommandLine.argc == 2{
+        let query = CommandLine.arguments[1]
+        
+        let library = Library()
+        let results = library.search(query:query)
+        
+        results.forEach{print($0)}
+        
+    } else {
+        print("ERROR: Single argument expected. You entered \(CommandLine.argc)")
+    }
 }
 
+main()

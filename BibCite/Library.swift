@@ -23,8 +23,7 @@ struct Library{
         guard let url = Bundle.main.url(forResource:allCitationFilename, withExtension: "bib") else{
             fatalError("Could not find citation reference file")
         }
-        let loader = CitationLoader()
-        self.citations = loader.citations(url: url)
+        self.citations = CitationLoader.shared.load(fromUrl: url)
     }
     
     

@@ -17,7 +17,7 @@ class CitationLoaderTests: XCTestCase {
         
         // when
         let loader = CitationLoader()
-        let citations = loader.citations(url: url)
+        let citations = loader.load(fromUrl: url)
         
         // then
         let expected = 3

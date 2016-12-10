@@ -93,8 +93,8 @@
 			children = (
 				867A77CF1D1BB789003A2AED /* main.swift */,
 				B7FC77A51D3BC05300A6F49B /* Library.swift */,
-				B7FD79331D1ED8A3008D0E49 /* Citation.swift */,
 				B70E163F1D3BDBB2006C125E /* CitationLoader.swift */,
+				B7FD79331D1ED8A3008D0E49 /* Citation.swift */,
 				B7FC77AB1D3BC9E400A6F49B /* BibFile-Full.bib */,
 			);
 			path = BibCite;
@@ -104,8 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				B70E16431D3BDE1A006C125E /* LibraryTests.swift */,
-				B7FD79351D1ED974008D0E49 /* CitationTests.swift */,
 				B7FC77B61D3BD6E200A6F49B /* CitationLoaderTests.swift */,
+				B7FD79351D1ED974008D0E49 /* CitationTests.swift */,
 				B7FD79261D1ED5C8008D0E49 /* Info.plist */,
 				B7FD79301D1ED7F1008D0E49 /* Sample Data */,
 			);

@@ -10,7 +10,11 @@ import XCTest
 
 class LibraryTests: XCTestCase {
 
-    func testThatInitLoadsExpectedData(){
+    func testThatInitLoadsCountOfExpectedData(){
+        
+    }
+    
+    func testThatInitLoadsExpectedDataSamples(){ // Check first and last
         
     }
     

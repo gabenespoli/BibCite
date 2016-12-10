@@ -12,12 +12,14 @@ import Foundation
 /// `CitationLoader` returns an array of `Citation` objects for a particular BibTeX file path.
 class CitationLoader{
     
+    static let shared = CitationLoader()
+    
     /**
      Returns an array of Citation objects for a particular BibTeX file
      
      - Parameter url: URL of BibTeX file
      */
-    func citations(url: URL) -> [Citation]{
+    func load(fromUrl url: URL) -> [Citation]{
         return [makeCitation(string: ""),
                 makeCitation(string: ""),
                 makeCitation(string: "")] // fake
@@ -32,7 +34,7 @@ class CitationLoader{
      
      - Parameter url: URL of BibTeX file
      */
-    func citationStrings(url: URL) -> [String]{
+    private func citationStrings(url: URL) -> [String]{
         
         // Load string from file
         
@@ -49,12 +51,12 @@ class CitationLoader{
      
      - Parameter string: The string data from within a .bib file's @article{} tag
      */
-    func makeCitation(string: String) -> Citation{
+    private func makeCitation(string: String) -> Citation{
         
         let citeKey = "Bidelman2009"
         let authorList = ["Bidelman","Gavin M and Krishnan","Ananthanarayan"]
         
         return Citation(key: citeKey, authors: authorList)
-    }
+    } // This is probably redundant
     
 }
