@@ -20,9 +20,8 @@ class CitationLoader{
      - Parameter url: URL of BibTeX file
      */
     func load(fromUrl url: URL) -> [Citation]{
-        return [makeCitation(string: ""),
-                makeCitation(string: ""),
-                makeCitation(string: "")] // fake
+        let strings = citationStrings(url: url)
+        return strings.map{ Citation(string: $0) }
     }
     
     
@@ -33,30 +32,30 @@ class CitationLoader{
         …]
      
      - Parameter url: URL of BibTeX file
+     - Note: The number of citationStrings may exceed the number of actual citations, depending on file formatting. Just ensure that flatMap is used when converting these to Citation instances.
      */
-    private func citationStrings(url: URL) -> [String]{
+    func citationStrings(url: URL) -> [String]{
         
         // Load string from file
+        let fileString:String
+        do{
+            fileString = try String(contentsOf: url)
+        }catch let e as NSError{
+            print("ERROR: \(e.localizedDescription)")
+            return [String]()
+        }
         
         // Parse, extracting citations
-        
-        //NT write test for this
-        
-        return [String]() // fake
+        let allStrings = fileString
+            .components(separatedBy: "@article")
+            .dropFirst()
+            .filter{$0.characters.count > 0 }
+            .map{chunk in
+                return chunk
+                    .trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                    .trimmingCharacters(in: CharacterSet(charactersIn: "{}"))
+                    .trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        }
+        return allStrings
     }
-    
-    
-    /**
-     Make a Citation object given a string in the .bib format
-     
-     - Parameter string: The string data from within a .bib file's @article{} tag
-     */
-    private func makeCitation(string: String) -> Citation{
-        
-        let citeKey = "Bidelman2009"
-        let authorList = ["Bidelman","Gavin M and Krishnan","Ananthanarayan"]
-        
-        return Citation(key: citeKey, authors: authorList)
-    } // This is probably redundant
-    
 }
