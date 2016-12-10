@@ -9,8 +9,8 @@
 import Foundation
 
 func main(){    
-    if CommandLine.argc == 2{
-        let query = CommandLine.arguments[1]
+    if CommandLine.argc >= 2{
+        let query = CommandLine.arguments[1..<Int(CommandLine.argc)].joined(separator: " ")
         
         let library = Library()
         let results = library.search(query:query)
