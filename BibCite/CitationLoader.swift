@@ -21,7 +21,7 @@ class CitationLoader{
      */
     func load(fromUrl url: URL) -> [Citation]{
         let strings = citationStrings(url: url)
-        return strings.map{ _ in Citation(key: "", authors: [""]) }
+        return strings.map{ Citation(string: $0) }
     }
     
     
@@ -32,9 +32,9 @@ class CitationLoader{
         …]
      
      - Parameter url: URL of BibTeX file
-     - Note: The number of citationStrings may exceed the number of actual citations, depending on file formatting. Just ensure that flatMap is used when converting these to Citation instances. 
+     - Note: The number of citationStrings may exceed the number of actual citations, depending on file formatting. Just ensure that flatMap is used when converting these to Citation instances.
      */
-    private func citationStrings(url: URL) -> [String]{
+    func citationStrings(url: URL) -> [String]{
         
         // Load string from file
         let fileString:String
@@ -50,6 +50,12 @@ class CitationLoader{
             .components(separatedBy: "@article")
             .dropFirst()
             .filter{$0.characters.count > 0 }
+            .map{chunk in
+                return chunk
+                    .trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                    .trimmingCharacters(in: CharacterSet(charactersIn: "{}"))
+                    .trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        }
         return allStrings
     }
 }
