@@ -10,22 +10,27 @@ import Foundation
 
 
 /// The Library struct keeps a record of all known Citation objects and tools for their setup and search
-struct Library{
+class Library{
     
     let citations:[Citation]
-    private let allCitationFilename = "BibFile-Full"
+    private static let allCitationFilename = "BibFile-Full"
     
+
+    init(citations: [Citation]){
+        self.citations = citations
+    }
     
     /**
      Loads all Citation objects from file
      */
-    init(){
-        guard let url = Bundle.main.url(forResource:allCitationFilename, withExtension: "bib") else{
+    convenience init(){
+        guard let url = Bundle.main.url(forResource:Library.allCitationFilename, withExtension: "bib") else{
             fatalError("Could not find citation reference file")
         }
-        self.citations = CitationLoader.shared.load(fromUrl: url)
+        let citations = CitationLoader.shared.load(fromUrl: url)
+        self.init(citations: citations)
     }
-    
+
     
     /**
      Returns Citations that match given search query
@@ -33,6 +38,23 @@ struct Library{
      - Parameter query: A string comprising the search query
      */
     func search(query: String) -> [Citation]{
-        return citations // fake
+        let searchTerms = query.components(separatedBy: .whitespaces)
+        let results = searchTerms.reduce( [Citation]() ){ results, term in
+            var array = results
+            array.append(contentsOf: self.citations(term: term))
+            return array
+        }
+        return results
+    }
+    
+    
+    /// Returns Citation objects that match individual search term
+    private func citations(term: String) -> [Citation]{
+        return self.citations.filter{
+            if $0.key.contains(term) || $0.authors.contains(term){
+                return true
+            }
+            return false
+        }
     }
 }
