@@ -14,6 +14,7 @@
 		B70E16421D3BDC23006C125E /* Citation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD79331D1ED8A3008D0E49 /* Citation.swift */; };
 		B70E16441D3BDE1A006C125E /* LibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70E16431D3BDE1A006C125E /* LibraryTests.swift */; };
 		B7F5424B1DFC7BE20065A218 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FC77A51D3BC05300A6F49B /* Library.swift */; };
+		B7F5424C1DFC8CC30065A218 /* BibFile-Full.bib in CopyFiles */ = {isa = PBXBuildFile; fileRef = B7FC77AB1D3BC9E400A6F49B /* BibFile-Full.bib */; };
 		B7F589FC1D32BAEE00D059CA /* String-Single-2.bib in Resources */ = {isa = PBXBuildFile; fileRef = B7F589FB1D32BAEE00D059CA /* String-Single-2.bib */; };
 		B7FC77A61D3BC05300A6F49B /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FC77A51D3BC05300A6F49B /* Library.swift */; };
 		B7FD792E1D1ED7EA008D0E49 /* BibFile-Single.bib in Resources */ = {isa = PBXBuildFile; fileRef = B7FD792B1D1ED7EA008D0E49 /* BibFile-Single.bib */; };
@@ -30,6 +31,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				B7F5424C1DFC8CC30065A218 /* BibFile-Full.bib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

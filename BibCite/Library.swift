@@ -13,9 +13,8 @@ import Foundation
 class Library{
     
     let citations:[Citation]
-    private static let allCitationFilename = "BibFile-Full"
+    private static let allCitationUrl = URL(fileURLWithPath: "BibFile-Full.bib")
     
-
     init(citations: [Citation]){
         self.citations = citations
     }
@@ -24,10 +23,10 @@ class Library{
      Loads all Citation objects from file
      */
     convenience init(){
-        guard let url = Bundle.main.url(forResource:Library.allCitationFilename, withExtension: "bib") else{
-            fatalError("Could not find citation reference file")
+        guard FileManager.default.fileExists(atPath: Library.allCitationUrl.path) else{
+            fatalError("Could not find citation reference file at path \(Library.allCitationUrl.path)")
         }
-        let citations = CitationLoader.shared.load(fromUrl: url)
+        let citations = CitationLoader.shared.load(fromUrl: Library.allCitationUrl)
         self.init(citations: citations)
     }
 
