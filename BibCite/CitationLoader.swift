@@ -21,7 +21,7 @@ class CitationLoader{
      */
     func load(fromUrl url: URL) -> [Citation]{
         let strings = citationStrings(url: url)
-        return strings.map{ Citation(string: $0) }
+        return strings.flatMap{ Citation(string: $0) }
     }
     
     

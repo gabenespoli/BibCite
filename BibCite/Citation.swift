@@ -59,8 +59,10 @@ class Citation:CustomStringConvertible{
         let citation = citationSplit.map({$0.components(separatedBy: "=")})
             .reduce([String:String]()) { myDict, keyAndValue in
                 var output = myDict
-                output[keyAndValue[0].trimmingCharacters(in: CharacterSet.whitespaces)] = keyAndValue[1].trimmingCharacters(in: CharacterSet.whitespaces)
-                    .trimmingCharacters(in: [",", "{", "}"])
+                if keyAndValue.count >= 2 {
+                    output[keyAndValue[0].trimmingCharacters(in: CharacterSet.whitespaces)] = keyAndValue[1].trimmingCharacters(in: CharacterSet.whitespaces)
+                        .trimmingCharacters(in: [",", "{", "}"])
+                }
                 return output
         }
         

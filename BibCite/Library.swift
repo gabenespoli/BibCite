@@ -51,7 +51,17 @@ class Library{
     /// Returns Citation objects that match individual search term
     private func citations(term: String) -> [Citation]{
         return self.citations.filter{
-            if $0.key.contains(term) || $0.authors.contains(term){
+            if $0.key.contains(term) ||
+                $0.author.contains(term) ||
+                $0.year.contains(term) ||
+                $0.title.contains(term) ||
+                $0.journal?.contains(term) ?? false ||
+                $0.file?.contains(term) ?? false ||
+                $0.url?.contains(term) ?? false ||
+                $0.volume?.contains(term) ?? false ||
+                $0.number?.contains(term) ?? false ||
+                $0.pages?.contains(term) ?? false ||
+                $0.doi?.contains(term) ?? false {
                 return true
             }
             return false
