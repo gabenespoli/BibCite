@@ -10,7 +10,7 @@ import Foundation
 import AppKit
 
 
-class Citation:CustomStringConvertible{
+class Citation: CustomStringConvertible {
     
     var key: String
     var author: String
@@ -29,7 +29,17 @@ class Citation:CustomStringConvertible{
     }
     
     
-    init(key: String, author: String, year: String, title: String, journal: String?, file: String?, url: String?, volume: String?, number: String?, pages: String?, doi: String?){
+    init(key: String,
+         author: String,
+         year: String,
+         title: String,
+         journal: String? = nil,
+         file: String? = nil,
+         url: String? = nil,
+         volume: String? = nil,
+         number: String? = nil,
+         pages: String? = nil,
+         doi: String? = nil){
         self.key = key
         self.author = author
         self.year = year
@@ -82,5 +92,16 @@ class Citation:CustomStringConvertible{
      */
     func copyKey(){
         
+    }
+}
+
+
+func ==(lhs: Citation, rhs: Citation) -> Bool {
+    return lhs.hashValue == rhs.hashValue
+}
+
+extension Citation: Hashable, Equatable {
+    var hashValue: Int {
+        return self.key.hashValue
     }
 }

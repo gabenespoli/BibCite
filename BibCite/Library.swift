@@ -37,19 +37,21 @@ class Library{
      - Parameter query: A string comprising the search query
      */
     func search(query: String) -> [Citation]{
-        let searchTerms = query.components(separatedBy: .whitespaces)
-        let results = searchTerms.reduce( [Citation]() ){ results, term in
-            var array = results
-            array.append(contentsOf: self.citations(term: term))
-            return array
-        }
-        return results
+        let results = query
+            .components(separatedBy: .whitespaces) // individual search terms
+            .map{ self.citations(term: $0) } // results for each search term
+            .reduce( Set<Citation>(self.citations) ){ overallResults, termResults in
+                var temp = overallResults
+                temp.formIntersection(termResults)
+                return temp
+        } // calculate intersection of all results (i.e., AND everything)
+        return Array(results).sorted(by: {$0.year > $1.year})
     }
     
     
     /// Returns Citation objects that match individual search term
-    private func citations(term: String) -> [Citation]{
-        return self.citations.filter{
+    private func citations(term: String) -> Set<Citation>{
+        let resultsArray = self.citations.filter{
             if $0.key.contains(term) ||
                 $0.author.contains(term) ||
                 $0.year.contains(term) ||
@@ -65,5 +67,6 @@ class Library{
             }
             return false
         }
+        return Set<Citation>(resultsArray)
     }
 }

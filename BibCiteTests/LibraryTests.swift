@@ -12,10 +12,10 @@ import XCTest
 class LibraryTests: XCTestCase {
     
     let testCitations:[Citation] = [
-        Citation(key: "Gabe2011", authors: ["barry","dogman"]),
-        Citation(key: "Gabe2017", authors: ["barry","fish"]),
-        Citation(key: "Alex2015", authors: ["horse","dogman"]),
-        Citation(key: "Alex1788", authors: ["eddie","patch"])]
+        Citation(key: "Gabe2011", author: "barry dogman", year: "2011", title: ""),
+        Citation(key: "Gabe2017", author: "barry fish", year: "2017", title: ""),
+        Citation(key: "Alex2015", author: "horse dogman", year: "1932", title: ""),
+        Citation(key: "Alex1788", author: "eddie patch", year: "1932", title: "")]
     
     
     func testThatItReturnsNothingForEmptySearch(){
@@ -39,8 +39,8 @@ class LibraryTests: XCTestCase {
         
         // then
         XCTAssertEqual(matches.count, 2)
-        XCTAssertEqual(matches[0].key, "Gabe2011")
-        XCTAssertEqual(matches[1].key, "Gabe2017")
+        XCTAssertEqual(matches[0].key, "Gabe2017")
+        XCTAssertEqual(matches[1].key, "Gabe2011")
     }
     
     func testThatItReturnsKnownResultForMultiWordSearch(){
@@ -48,10 +48,10 @@ class LibraryTests: XCTestCase {
         let library = Library(citations: testCitations)
         
         // when
-        let matches = library.search(query: "patch")
+        let matches = library.search(query: "horse dogman")
         
         // then
         XCTAssertEqual(matches.count, 1)
-        XCTAssertEqual(matches.first!.key, "Alex1788")
+        XCTAssertEqual(matches.first!.key, "Alex2015")
     }
 }
